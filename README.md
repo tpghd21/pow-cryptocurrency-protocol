@@ -33,10 +33,10 @@ The system was subjected to a series of adversarial simulations to verify its ro
 
 | Attack Vector | Countermeasure Implementation | Simulation Outcome |
 | :--- | :--- | :--- |
-| **Double Spending** | **Mempool Collision & Longest Chain Rule** <br> The system detects conflicting nonces in the mempool and rejects the second transaction. | ✅ **Blocked** (Tx Rejected) |
-| **Replay Attack** | **Strict Nonce Ordering** <br> Enforced `Tx.Nonce == Account.Nonce`. Attempting to rebroadcast a signed Tx fails as the account state increments. | ✅ **Blocked** (Nonce Mismatch) |
-| **DoS Flooding** | **Mempool Governance** <br> Implemented `max_pending_size` and fee-based prioritization. Excess transactions are dropped to preserve RAM. | ✅ **Mitigated** (Traffic Dropped) |
-| **Time-Warp** | **Temporal Drift Checks** <br> Blocks with timestamps > 2 hours into the future are rejected to maintain difficulty integrity. | ✅ **Validated** |
+| **Double Spending** | **Mempool Collision & Longest Chain Rule** <br> The system detects conflicting nonces in the mempool and rejects the second transaction. |  **Blocked** (Tx Rejected) |
+| **Replay Attack** | **Strict Nonce Ordering** <br> Enforced `Tx.Nonce == Account.Nonce`. Attempting to rebroadcast a signed Tx fails as the account state increments. |  **Blocked** (Nonce Mismatch) |
+| **DoS Flooding** | **Mempool Governance** <br> Implemented `max_pending_size` and fee-based prioritization. Excess transactions are dropped to preserve RAM. |  **Mitigated** (Traffic Dropped) |
+| **Time-Warp** | **Temporal Drift Checks** <br> Blocks with timestamps > 2 hours into the future are rejected to maintain difficulty integrity. |  **Validated** |
 
 ---
 
